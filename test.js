@@ -1,147 +1,100 @@
-// console.log("Hello,World")
+// JS Object properties
 
-// alert("Javacscript is connected")
-
-//   document.write("Welcome to Javacscript")
-
-//  console.log("Welcome to Javacscript")
-
-//  alert("Welcome to Javacscript")
- 
-// JS syntax
-
-//  let x = 10;
-//  if (x>5) {
-//     console.log("x is geater than 5");
-//  }
-// else {
-//    console.log("x is not geater than 5");
-// }
-
-// JS Variables
-// let name="John";
-// let age=25;
-// console.log('name');
-// console.log('age');
-
-
-//  JS let
-
-//  let x = 7;
-//  {
-//     let x=6;
-//     console.log(x);
-//  }
-//  console.log(x);
-
-//  JS const
-
-
-// JS operators
-
-// let y=8;
-// let z=5;
-// let sum=y+z;
-// console.log(sum);
-// let subtraction=y-z;
-// console.log(subtraction);
-// let multiplication=y*z;
-// console.log(multiplication);
-// let division=y/z;
-// console.log(division);
-// let modulus=y%z;
-// console.log(modulus);
-
-
-// JS Arithmetic
-// var a=Number(prompt("enter first number"));
-
-// JS Assignment
-// let a=10;
-// a+=5;
-// console.log('value of a is:'+a);
-
-// let a=10;
-// a-=5;
-// console.log('value of a is:'-a);
-
-
-// let a=10;
-// a*=5;
-// console.log('value of a is:'*a);
-
-
-// let a=10;
-// a%=5;
-// console.log('value of a is:'%a);
-
-// JS Data Types
-
-// let a="John"
-// console.log(typeof(a));
-// let b=3;
-// console.log(typeof(b));
-// let c=true;
-// console.log(typeof(c));
-// let person={
-//    firstname:"John",
-//    lastname:"Doe",
-// }
-// console.log(typeof(person));
-
-// let d =["3"]
-// console.log(typeof(d));
-
-// // JS Functions
-// function sum(a,b){
-//    return a+b;
-// }
-// const value =sum(1,4);
-// console.log(value);
-
-// JS Objects
-
-// const studentInfo={
-//    firstname:"Jhon",
-//     lastname:"Doe",
-//     age:25,
-//     grade:"5.00",
-//    }
-// console.log(studentInfo);
-
-
-// JS Object Properties
-
-// Adding properties using dot notation
-// studentInfo.country = 'BD';
-// studentInfo.email = 'jhon@example.com';
- 
-// // Adding properties using bracket notation
-// studentInfo['hobby'] = 'Gaming';
-// studentInfo['gender'] = 'Male';
- 
-// console.log('After adding properties:');
-// console.log(studentInfo);
- 
-
-// // Removing properties using dot notation
-// delete studentInfo.age;
-// delete studentInfo.grade;
- 
-// // Removing properties using bracket notation
-// delete studentInfo['hobby'];
-// delete studentInfo['gender'];
- 
-// console.log('After removing properties:');
-// console.log(studentInfo);
-
-
-// Exercise 2
-// JS object properties
+// Exercise 1
 const bookInfo = {};
 bookInfo["Title"] = "The Book";
 bookInfo["Author"] = "Famous Writer";
 bookInfo["Year"] = "1984";
 
 console.log(bookInfo);
+
+// Exercise 2
+const bookInfo2 = {
+    Title : "The Book",
+    Author: "Famous Writer",
+
+}
+bookInfo2.Page="300 page";
+
+console.log(bookInfo2);
+
+// Object methods
+
+// Exercise 1
+const bookInfo3 = {
+Title :"The Book",
+Author:"Famous Writer",
+     bookInfo4:function(){
+        return 'The books title and author name is :'+bookInfo.Title+" "+bookInfo.Author;
+     }
+}
+console.log(bookInfo3.bookInfo4());
+
+// Exercise 2
+
+ const person={
+    firstName:'Jhon',
+     lastName:'Doe',
+     fullName:function(){
+         return 'the person\'s fullname is :'+this.firstName+" "+this.lastName;
+     }
+
+ }
+ console.log(person.fullName());
+
+// JS object display
+
+// Exercise 1
+
+ const person2={
+     firstName:'Jhon',
+     lastName:'Doe',
+     age:30,
+
+ }
+ document.write(Object.keys(person2));
+ document.write(Object.values(person2));
+
+// JS object constructors
+
+// Excercise 1
+    
+function Book(title,author,year){
+    this.title=title;
+    this.author=author;
+    this.year=year;
+}
+
+const book1=new Book('The First Book', 'Famous Writer num1', "Year");
+console.log(book1);
+const book2=new Book('The Second Book', 'Famous Writer num2', "Year");
+console.log(book2);
+
+// Exercise 2
+
+function Book1(title,author,year){
+    this.title=title;
+    this.author=author;
+    this.year=year;
+    this.book_details=function(){
+        return this.title+" "+this.author
+    };
+}
+const book3=new Book1('The First Book', 'Famous Writer num1', "Year");
+console.log(book3.book_details());
+
+
+// Exercise adding a method to an object
+function Book2(title,author,year){
+    this.title=title;
+    this.author=author;
+    this.year=year;
+  
+}
+const book4=new Book2('The third Book', 'Famous Writer num3', "Year");
+book4.page='300 page';
+console.log(book4);
+
+
+
 
